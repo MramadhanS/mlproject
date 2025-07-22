@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #e0f7fa; /* Warna latar belakang yang lembut */
+            display: flex;
+            flex-direction: column; /* Ubah ke kolom agar tombol bisa di bawah h1 */
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Pastikan konten mengisi seluruh tinggi viewport */
+            margin: 0;
+            color: #333;
+            text-align: center; /* Pastikan teks di tengah */
+        }
+
+        h1 {
+            color: #007bff; /* Warna biru yang menarik */
+            font-size: 3em; /* Ukuran font yang lebih besar */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Efek bayangan teks */
+            padding: 20px 40px; /* Padding di sekitar teks */
+            border: 2px solid #007bff; /* Border dengan warna yang sama */
+            border-radius: 15px; /* Sudut membulat */
+            background-color: #ffffff; /* Latar belakang putih untuk h1 */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Bayangan kotak yang lebih menonjol */
+            display: inline-block; /* Agar padding dan border hanya mengelilingi teks */
+            animation: fadeInScale 1s ease-out forwards; /* Animasi saat halaman dimuat */
+            margin-bottom: 30px; /* Beri jarak antara judul dan tombol */
+        }
+
+        /* Gaya Tombol Baru */
+        .btn-predict {
+            background-color: #28a745; /* Warna hijau yang menarik */
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-decoration: none; /* Hapus garis bawah default untuk tautan */
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-predict:hover {
+            background-color: #218838; /* Warna hijau sedikit lebih gelap saat di-hover */
+            transform: translateY(-2px); /* Efek sedikit terangkat saat di-hover */
+        }
+
+        /* Definisi Animasi */
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the home page</h1>
+    <a href="{{ url_for('predict_datapoint') }}" class="btn-predict">Go to Prediction Page</a>
+</body>
+</html>
